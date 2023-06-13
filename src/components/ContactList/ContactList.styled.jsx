@@ -16,7 +16,7 @@ export const ContactsContainer = styled.p`
     color: white;
     font-weight: bold;
 `
-export const PhoneContainer = styled.span`
+export const PhoneContainer = styled.p`
     margin-left: 24px;
 `
 export const DeletContactBtn = styled.button`
