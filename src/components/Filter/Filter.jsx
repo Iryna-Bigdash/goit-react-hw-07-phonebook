@@ -1,24 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { setStatusFilter } from 'redux/filtersSlice';
+
+import { setFilter } from 'redux/filtersSlice';
 import { FilterLabel, FilterInput } from './Filter.styled'; 
+import { useDispatch } from 'react-redux';
 
-const Filter = () => {
+export default function Filter() {
   const dispatch = useDispatch();
-  const filterValue = useSelector(state => state.filter.filter); // Отримуємо значення фільтра зі стору
 
-  const handleInputChange = (event) => {
-    dispatch(setStatusFilter({ filter: event.target.value })); // Передаємо об'єкт з полем "filter"
+  const handleChangeFilter = e => {
+    dispatch(setFilter(e.target.value));
   };
-
   return (
-    <div>
-      <FilterLabel>
-        Find contacts by name
-        <FilterInput type="text" value={filterValue} onChange={handleInputChange} />
-      </FilterLabel>
-    </div>
+    <>
+      <FilterLabel htmlFor="1">Find contacts by name</FilterLabel>
+      <FilterInput
+        id="1"
+        type="text"
+        name="filter"
+        title="Use this field to filter contacts by contact's name"
+        onChange={handleChangeFilter}
+      />
+    </>
   );
-};
-
-export default Filter;
-
+}

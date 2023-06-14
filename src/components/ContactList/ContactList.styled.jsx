@@ -19,7 +19,7 @@ export const ContactsContainer = styled.p`
 export const PhoneContainer = styled.p`
     margin-left: 24px;
 `
-export const DeletContactBtn = styled.button`
+export const DeleteContactBtn = styled.button`
     background-color: #e5d2f8;
    width: 100px;
    cursor: pointer;
