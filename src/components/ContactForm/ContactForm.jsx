@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, InputForm, BtnForm } from './ContactForm.styled';
 import { getContacts } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,18 +54,15 @@ export default function ContactForm() {
       return;
     }
 
-    dispatch(addContact({ id: nanoid(), name: contact.name, number: contact.number }));
+    dispatch(addContact({ id: contact.id, name: contact.name, number: contact.number }));
     setContact(initialState);
   };
 
-  const idName = nanoid();
-  const idNumber = nanoid();
-
   return (
     <Form onSubmit={handleSubmit}>
-      <Label htmlFor={idName}>Name</Label>
+      <Label htmlFor={contact.id}>Name</Label>
       <InputForm
-        id={idName}
+        id={contact.id}
         type="text"
         name="name"
         value={contact.name}
@@ -74,9 +70,9 @@ export default function ContactForm() {
         onChange={handleChange}
       />
 
-      <Label htmlFor={idNumber}>Number</Label>
+      <Label htmlFor={contact.id}>Number</Label>
       <InputForm
-        id={idNumber}
+        id={contact.id}
         type="tel"
         name="number"
         value={contact.number}
