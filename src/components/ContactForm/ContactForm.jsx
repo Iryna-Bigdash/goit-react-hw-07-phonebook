@@ -13,9 +13,9 @@ export default function ContactForm() {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
-    setContact((prevState) => ({
+    setContact(prevState => ({
       ...prevState,
       [name]: value,
     }));
@@ -46,7 +46,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     if (contacts.find(({ number }) => number === contact.number)) {
@@ -54,7 +54,9 @@ export default function ContactForm() {
       return;
     }
 
-    dispatch(addContact({ id: contact.id, name: contact.name, number: contact.number }));
+    dispatch(
+      addContact({ id: contact.id, name: contact.name, number: contact.number })
+    );
     setContact(initialState);
   };
 
