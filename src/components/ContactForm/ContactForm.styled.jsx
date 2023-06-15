@@ -1,32 +1,60 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.form`
-  border-color: white;
+
+
+// export const BtnForm = styled.button`
+//   width: 150px;
+//   background-color: #8b54c1;
+//   font-size: 25px;
+//   color: white;
+//   border: none;
+//   border-radius: 5%;
+//   cursor: pointer;
+
+//   &&:hover{
+//     border: 1px solid white;
+//   }
+// `;
+
+
+const Form = styled.form`
   display: flex;
-  padding: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-color: white;
   background-color: #8b54c1;
 `;
-export const Label = styled.label`
+
+const Label = styled.label`
+  margin-right: 10px;
+  font-weight: bold;
   color: white;
-  font-size: 30px;
-  text-align: center;
 `;
-export const InputForm = styled.input`
-  font-size: 30px;
-  text-align: center;
-  margin: 20px;
+
+const InputForm = styled.input`
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 25px;
 `;
-export const BtnForm = styled.button`
-  width: 150px;
+
+const BtnForm = styled.button`
+  width: 180px;
+  padding: 10px;
   background-color: #8b54c1;
   font-size: 25px;
   color: white;
   border: none;
   border-radius: 5%;
-  cursor: pointer;
-
-  &&:hover{
+  cursor: pointer; 
+   &&:hover{
     border: 1px solid white;
   }
 `;
+
+
+export { Form, Label, InputForm, BtnForm };
+
+
